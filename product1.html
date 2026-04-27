@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Transformer | CEEG Electric</title>
+    <title>Smart Transformer | Sharable Techaolagy</title>
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box;font-family: Arial, sans-serif;}
         :root {--primary:#0052cc;--dark:#1a237e;--light:#f5f7fa;--gray:#666;}
@@ -12,10 +12,15 @@
         .container {width:90%;max-width:1200px;margin:0 auto;}
         header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
         .nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
-        .logo{font-size:24px;font-weight:bold;color:var(--primary);}
+        .logo{font-size:24px;font-weight:bold;color:red;}
         .nav-menu{display:flex;gap:30px;}
         .nav-menu a{color:#333;}
-        .nav-menu a:hover{color:var(--primary);}
+        .nav-menu a:hover{color:red;}
+        .nav-menu li{position:relative;}
+        .dropdown{position:absolute;top:100%;left:0;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:4px;min-width:200px;display:none;z-index:100;}
+        .dropdown a{display:block;padding:12px 20px;color:#333;white-space:nowrap;}
+        .dropdown a:hover{background:#f5f5f5;color:red;}
+        .nav-menu li:hover .dropdown{display:block;}
         .page-banner{background:var(--dark);color:#fff;padding:60px 0;text-align:center;}
         .page-banner h1{font-size:36px;}
         .product-detail{padding:80px 0;background:#f9f9f9;}
@@ -32,10 +37,17 @@
 <body>
 <header>
     <div class="container nav">
-        <div class="logo">CEEG Electric</div>
+        <div class="logo">Sharable Techaolagy</div>
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="product1.html">Products</a></li>
+            <li><a href="#">Products</a>
+                <div class="dropdown">
+                    <a href="product1.html">Electric Transformers</a>
+                    <a href="product2.html">Metal-enclosed Switchgear</a>
+                    <a href="product3.html">OEM Design Service</a>
+                    <a href="product4.html">Parts Processing</a>
+                </div>
+            </li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -69,7 +81,7 @@
 
 <footer>
     <div class="container">
-        <div class="copyright">© 2026 CEEG Electric. All Rights Reserved.</div>
+        <div class="copyright">© 2026 Sharable Techaolagy. All Rights Reserved.</div>
     </div>
 </footer>
 </body>
