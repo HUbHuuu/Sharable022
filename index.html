@@ -47,10 +47,47 @@
         .product-info h3{font-size:18px;margin-bottom:10px;color:var(--title-color);font-weight:600;}
         .product-info p{color:var(--text-color);font-size:14px;font-weight:400;line-height:1.6;}
         .contact{padding:80px 0;background:#fff;}
-        .contact-box{display:flex;flex-wrap:wrap;gap:40px;align-items:center;}
-        .contact-left{flex:1;min-width:300px;}
-        .contact-left h3{font-size:28px;margin-bottom:20px;color:var(--brand-blue);font-weight:600;}
-        .contact-item{margin-bottom:15px;display:flex;align-items:center;gap:10px;}
+        .contact-layout{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .company-info{
+            text-align: left;
+        }
+        .company-info h2{
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--title-color);
+            margin-bottom: 16px;
+            letter-spacing: 0.6px;
+        }
+        .company-info .divider{
+            width: 80px;
+            height: 6px;
+            background-color: var(--text-color);
+            margin-bottom: 24px;
+            border-radius: 4px;
+        }
+        .company-info p{
+            font-size: 16px;
+            color: var(--text-color);
+            font-weight: 400;
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+        .company-info a{
+            color: var(--brand-blue);
+            text-decoration: none;
+        }
+        .company-info a:hover{
+            color: var(--brand-red);
+        }
+        .contact-details{
+            text-align: right;
+        }
+        .contact-item{font-size:16px;margin:16px 0;color:var(--text-color);font-weight:400;line-height:1.8;}
         footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;}
         .footer-content{display:flex;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
         .footer-col{flex:1;min-width:200px;}
@@ -94,7 +131,7 @@
             .products{padding:50px 0;}
             .section-title h2{font-size:26px;}
             .contact{padding:50px 0;}
-            .contact-left h3{font-size:24px;}
+            .company-info h2{font-size:26px;}
             .mission{padding:50px 0;}
             .mission-wrap{flex-direction:column;text-align:center;gap:30px;}
             .mission-content{width:100%;}
@@ -201,13 +238,21 @@
 <section class="contact">
     <div class="container">
         <div class="section-title"><h2>Contact Us</h2></div>
-        <div class="contact-box">
-            <div class="contact-left">
-                <h3>Get In Touch</h3>
+        <div class="contact-layout">
+            <!-- 左侧：公司信息 -->
+            <div class="company-info">
+                <h2>Sharable Technology</h2>
+                <div class="divider"></div>
+                <p><strong>Tianjin Sharable Technology Co., Ltd.</strong></p>
+                <p>Website: <a href="https://sharable022.xyz/">sharable022.xyz</a></p>
+            </div>
+
+            <!-- 右侧：联系信息 -->
+            <div class="contact-details">
                 <div class="contact-item"><strong>International Customers</strong></div>
                 <div class="contact-item">Office: Hong Kong</div>
                 <div class="contact-item">Contact: intsales@sharable.com.cn</div>
-                <div class="contact-item" style="margin-top:20px;"><strong>North America Customers</strong></div>
+                <div class="contact-item" style="margin-top:30px;"><strong>North America Customers</strong></div>
                 <div class="contact-item">Office: Los Angeles</div>
                 <div class="contact-item">Contact: nasales@sharable.com.cn</div>
             </div>

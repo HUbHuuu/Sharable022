@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,13 @@
     <title>About Us | Sharable Technology</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Inter', Arial, sans-serif;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
         :root {
             --brand-red: #D62828;
             --brand-blue: #0F3460;
@@ -15,6 +21,7 @@
             --light: #f5f7fa;
             --gray: #666;
         }
+
         a {text-decoration: none;color: inherit;}
         ul {list-style: none;}
         .container {width:90%;max-width:1200px;margin:0 auto;}
@@ -22,7 +29,7 @@
         .nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
         .logo{font-size:24px;font-weight:700;color:var(--brand-red);font-family: 'Inter', Arial, sans-serif;letter-spacing: 0.5px;}
         .nav-menu{display:flex;gap:30px;}
-        .nav-menu a{color:#333;}
+        .nav-menu a{color:#333;font-weight:500;}
         .nav-menu a:hover{color:var(--brand-red);}
         .nav-menu li{position:relative;}
         .dropdown{position:absolute;top:100%;left:0;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:4px;min-width:200px;display:none;z-index:100;}
@@ -30,11 +37,152 @@
         .dropdown a:hover{background:#f5f5f5;color:var(--brand-red);}
         .nav-menu li:hover .dropdown{display:block;}
         .page-banner{background:var(--brand-blue);color:#fff;padding:60px 0;text-align:center;}
-        .about-content{padding:80px 0;}
-        .about-content h2{font-size:30px;margin-bottom:30px;color:var(--title-color);font-weight:600;letter-spacing: 0.6px;}
-        .about-content p{line-height:1.8;margin-bottom:20px;color:var(--text-color);font-weight:400;}
         footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;margin-top:60px;}
         .copyright{text-align:center;color:#ccc;}
+
+        /* 公司简介页面样式 */
+        .company-profile {
+            background-color: #fff;
+            color: var(--text-color);
+            padding: 80px 0;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .profile-container h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--title-color);
+            letter-spacing: 0.6px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 6px;
+            background-color: var(--text-color);
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 280px 380px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px 24px;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .card .clip {
+            position: absolute;
+            top: -12px;
+            left: 12px;
+            width: 40px;
+            height: 40px;
+            background-image: url('images/icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+            color: var(--title-color);
+            letter-spacing: 0.6px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            font-size: 16px;
+            margin: 16px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text-color);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--brand-blue);
+            border-radius: 50%;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .content-wrapper {
+                grid-template-columns: 1fr 240px 320px;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .card {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .company-profile {
+                padding: 50px 0;
+            }
+
+            .profile-container h1 {
+                font-size: 26px;
+            }
+
+            .divider {
+                width: 60px;
+                height: 4px;
+            }
+
+            .intro-text {
+                font-size: 14px;
+            }
+
+            .card h3 {
+                font-size: 20px;
+            }
+
+            .card li {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,11 +211,43 @@
     </div>
 </section>
 
-<section class="about-content container">
-    <h2>Company Profile</h2>
-    <p>Sharable Technology is a professional manufacturer focusing on R&D, production and sales of electrical power equipment.</p>
-    <p>With advanced production equipment and strict quality control system, we provide stable and reliable electrical products for global customers.</p>
-    <p>Our products are exported to many countries and regions, widely used in power grid, industry, new energy and construction fields.</p>
+<section class="company-profile">
+    <div class="profile-container">
+        <h1>Company Profile</h1>
+        <div class="divider"></div>
+
+        <div class="content-wrapper">
+            <!-- 左侧介绍文本 -->
+            <div class="intro-text">
+                Established in 2019.<br>
+                Tianjin sharable Technology Co., Ltd. is a professional manufacturing enterprise specialized in the supporting processing of components and parts for the power industry, and is also equipped with the R&D and design capabilities for ring main unit operating mechanisms, disconnectors and switchgear. We are committed to providing high-quality power equipment and solutions for the global power industry, and empowering the global energy transition.
+            </div>
+
+            <!-- 服务行业卡片 -->
+            <div class="card">
+                <div class="clip"></div>
+                <h3>Service Industry</h3>
+                <ul>
+                    <li>Power</li>
+                    <li>Energy</li>
+                </ul>
+            </div>
+
+            <!-- 业务范围卡片 -->
+            <div class="card">
+                <div class="clip"></div>
+                <h3>Business Scope</h3>
+                <ul>
+                    <li>High-Voltage Power Products</li>
+                    <li>Medium-Voltage Power Products</li>
+                    <li>Energy Storage</li>
+                    <li>Cable Accessories</li>
+                    <li>Transformer</li>
+                    <li>Parts Processing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>

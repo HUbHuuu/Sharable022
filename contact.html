@@ -31,9 +31,48 @@
         .nav-menu li:hover .dropdown{display:block;}
         .page-banner{background:var(--brand-blue);color:#fff;padding:60px 0;text-align:center;}
         .contact-wrap{padding:80px 0;}
-        .contact-item{font-size:18px;margin:20px 0;color:var(--text-color);font-weight:400;}
+        .contact-layout{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .company-info{
+            text-align: left;
+        }
+        .company-info h2{
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--title-color);
+            margin-bottom: 16px;
+            letter-spacing: 0.6px;
+        }
+        .company-info .divider{
+            width: 80px;
+            height: 6px;
+            background-color: var(--text-color);
+            margin-bottom: 24px;
+            border-radius: 4px;
+        }
+        .company-info p{
+            font-size: 16px;
+            color: var(--text-color);
+            font-weight: 400;
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+        .company-info a{
+            color: var(--brand-blue);
+            text-decoration: none;
+        }
+        .company-info a:hover{
+            color: var(--brand-red);
+        }
+        .contact-details{
+            text-align: right;
+        }
+        .contact-item{font-size:16px;margin:16px 0;color:var(--text-color);font-weight:400;line-height:1.8;}
         footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;margin-top:60px;}
-        .copyright{text-align:center;color:#ccc;}
     </style>
 </head>
 <body>
@@ -62,13 +101,28 @@
     </div>
 </section>
 
-<section class="contact-wrap container">
-    <div class="contact-item"><strong>International Customers</strong></div>
-    <div class="contact-item">Office: Hong Kong</div>
-    <div class="contact-item">Contact: intsales@sharable.com.cn</div>
-    <div class="contact-item" style="margin-top:40px;"><strong>North America Customers</strong></div>
-    <div class="contact-item">Office: Los Angeles</div>
-    <div class="contact-item">Contact: nasales@sharable.com.cn</div>
+<section class="contact-wrap">
+    <div class="container">
+        <div class="contact-layout">
+            <!-- 左侧：公司信息 -->
+            <div class="company-info">
+                <h2>Sharable Technology</h2>
+                <div class="divider"></div>
+                <p><strong>Tianjin Sharable Technology Co., Ltd.</strong></p>
+                <p>Website: <a href="https://sharable022.xyz/">sharable022.xyz</a></p>
+            </div>
+
+            <!-- 右侧：联系信息 -->
+            <div class="contact-details">
+                <div class="contact-item"><strong>International Customers</strong></div>
+                <div class="contact-item">Office: Hong Kong</div>
+                <div class="contact-item">Contact: intsales@sharable.com.cn</div>
+                <div class="contact-item" style="margin-top:30px;"><strong>North America Customers</strong></div>
+                <div class="contact-item">Office: Los Angeles</div>
+                <div class="contact-item">Contact: nasales@sharable.com.cn</div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
