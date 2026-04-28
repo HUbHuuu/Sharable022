@@ -5,31 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Voltage Switchgear | Sharable Technology</title>
     <style>
-        * {margin: 0;padding: 0;box-sizing: border-box;font-family: Arial, sans-serif;}
-        :root {--primary:#0052cc;--dark:#1a237e;--light:#f5f7fa;--gray:#666;}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Inter', Arial, sans-serif;}
+        :root {
+            --brand-red: #D62828;
+            --brand-blue: #0F3460;
+            --title-color: #1A1A2E;
+            --text-color: #2A7886;
+            --light: #f5f7fa;
+            --gray: #666;
+        }
         a {text-decoration: none;color: inherit;}
         ul {list-style: none;}
         .container {width:90%;max-width:1200px;margin:0 auto;}
         header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
         .nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
-        .logo{font-size:24px;font-weight:bold;color:red;}
+        .logo{font-size:24px;font-weight:700;color:var(--brand-red);font-family: 'Inter', Arial, sans-serif;letter-spacing: 0.5px;}
         .nav-menu{display:flex;gap:30px;}
         .nav-menu a{color:#333;}
-        .nav-menu a:hover{color:red;}
+        .nav-menu a:hover{color:var(--brand-red);}
         .nav-menu li{position:relative;}
         .dropdown{position:absolute;top:100%;left:0;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:4px;min-width:200px;display:none;z-index:100;}
         .dropdown a{display:block;padding:12px 20px;color:#333;white-space:nowrap;}
-        .dropdown a:hover{background:#f5f5f5;color:red;}
+        .dropdown a:hover{background:#f5f5f5;color:var(--brand-red);}
         .nav-menu li:hover .dropdown{display:block;}
-        .page-banner{background:var(--dark);color:#fff;padding:60px 0;text-align:center;}
+        .page-banner{background:var(--brand-blue);color:#fff;padding:60px 0;text-align:center;}
         .page-banner h1{font-size:36px;}
         .product-detail{padding:80px 0;background:#f9f9f9;}
         .detail-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
         .detail-img img{width:100%;border-radius:8px;}
-        .detail-text h2{font-size:28px;margin-bottom:20px;}
-        .detail-text p{color:var(--gray);line-height:1.8;margin-bottom:15px;}
-        .back-btn{display:inline-block;margin-top:20px;padding:10px 25px;background:var(--primary);color:#fff;border-radius:4px;}
-        footer{background:var(--dark);color:#fff;padding:40px 0 20px;margin-top:60px;}
+        .detail-text h2{font-size:28px;margin-bottom:20px;color:var(--title-color);font-weight:600;letter-spacing: 0.6px;}
+        .detail-text p{color:var(--text-color);line-height:1.8;margin-bottom:15px;font-weight:400;}
+        .back-btn{display:inline-block;margin-top:20px;padding:10px 25px;background:var(--brand-blue);color:#fff;border-radius:4px;font-weight:600;font-family: 'Inter', Arial, sans-serif;}
+        footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;margin-top:60px;}
         .copyright{text-align:center;color:#ccc;}
         @media (max-width:768px){.detail-wrap{grid-template-columns:1fr;}}
     </style>

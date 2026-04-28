@@ -5,45 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharable Technology - Home</title>
     <style>
-        * {margin: 0;padding: 0;box-sizing: border-box;font-family: Arial, sans-serif;}
-        :root {--primary:#0052cc;--dark:#1a237e;--light:#f5f7fa;--gray:#666;}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Inter', Arial, sans-serif;}
+        :root {
+            --brand-red: #D62828;
+            --brand-blue: #0F3460;
+            --title-color: #1A1A2E;
+            --text-color: #2A7886;
+            --light: #f5f7fa;
+            --gray: #666;
+        }
         a {text-decoration: none;color: inherit;}
         ul {list-style: none;}
         .container {width:90%;max-width:1200px;margin:0 auto;}
         header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:99;}
         .nav{display:flex;justify-content:space-between;align-items:center;height:70px;}
-        .logo{font-size:24px;font-weight:bold;color:red;}
+        .logo{font-size:24px;font-weight:700;color:var(--brand-red);font-family: 'Inter', Arial, sans-serif;letter-spacing: 0.5px;}
         .nav-menu{display:flex;gap:30px;}
         .nav-menu a{color:#333;font-weight:500;}
-        .nav-menu a.active,.nav-menu a:hover{color:red;}
+        .nav-menu a.active,.nav-menu a:hover{color:var(--brand-red);}
         .nav-menu li{position:relative;}
         .dropdown{position:absolute;top:100%;left:0;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:4px;min-width:200px;display:none;z-index:100;}
         .dropdown a{display:block;padding:12px 20px;color:#333;white-space:nowrap;}
-        .dropdown a:hover{background:#f5f5f5;color:red;}
+        .dropdown a:hover{background:#f5f5f5;color:var(--brand-red);}
         .nav-menu li:hover .dropdown{display:block;}
-        .banner{height:500px;background:linear-gradient(rgba(0,82,204,0.8),rgba(26,35,126,0.9)),
+        .banner{height:500px;background:linear-gradient(rgba(15,52,96,0.8),rgba(15,52,96,0.9)),
         url('https://picsum.photos/id/1073/1920/1080') center/cover no-repeat;display:flex;align-items:center;color:#fff;}
         .banner-content h1{font-size:42px;margin-bottom:20px;color:#fff;}
         .banner-content p{font-size:18px;margin-bottom:30px;line-height:1.6;color:#fff;}
-        .btn{padding:12px 30px;background:#fff;color:var(--primary);border-radius:4px;font-weight:bold;transition:.3s;}
-        .btn:hover{background:var(--dark);color:#fff;}
+        .btn{padding:12px 30px;background:#FFFFFF;color:var(--brand-blue);border-radius:4px;font-weight:600;transition:.3s;font-family: 'Inter', Arial, sans-serif;border: 2px solid var(--brand-blue);}
+        .btn:hover{background:var(--brand-blue);color:#FFFFFF;}
         .products{padding:80px 0;background:var(--light);}
         .section-title{text-align:center;margin-bottom:50px;}
-        .section-title h2{font-size:32px;color:#333;margin-bottom:10px;}
-        .section-title p{color:var(--gray);max-width:600px;margin:0 auto;}
+        .section-title h2{font-size:32px;color:var(--title-color);margin-bottom:10px;font-weight:600;letter-spacing: 0.6px;}
+        .section-title p{color:var(--text-color);max-width:600px;margin:0 auto;font-weight:400;line-height:1.6;}
         .product-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px;}
         .product-item{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08);transition:.3s;}
         .product-item:hover{transform:translateY(-5px);}
         .product-item img{width:100%;height:180px;object-fit:cover;}
         .product-info{padding:20px;}
-        .product-info h3{font-size:18px;margin-bottom:10px;color:#333;}
-        .product-info p{color:var(--gray);font-size:14px;}
+        .product-info h3{font-size:18px;margin-bottom:10px;color:var(--title-color);font-weight:600;}
+        .product-info p{color:var(--text-color);font-size:14px;font-weight:400;line-height:1.6;}
         .contact{padding:80px 0;background:#fff;}
         .contact-box{display:flex;flex-wrap:wrap;gap:40px;align-items:center;}
         .contact-left{flex:1;min-width:300px;}
-        .contact-left h3{font-size:28px;margin-bottom:20px;color:var(--primary);}
+        .contact-left h3{font-size:28px;margin-bottom:20px;color:var(--brand-blue);font-weight:600;}
         .contact-item{margin-bottom:15px;display:flex;align-items:center;gap:10px;}
-        footer{background:var(--dark);color:#fff;padding:40px 0 20px;}
+        footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;}
         .footer-content{display:flex;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
         .footer-col{flex:1;min-width:200px;}
         .footer-col h4{margin-bottom:15px;}
@@ -52,9 +60,9 @@
         .mission{padding:80px 0;background:#fff;}
         .mission-wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;}
         .mission-content{flex:1;}
-        .mission-title{font-size:1.8rem;font-weight:bold;color:#222;position:relative;margin-bottom:30px;}
-        .mission-title::after{content:'';position:absolute;left:0;bottom:-10px;width:80px;height:6px;background:rgb(49, 151, 158);}
-        .mission-text{font-size:1.2rem;line-height:1.6;color:rgb(49, 151, 158);font-weight:500;margin-bottom:20px;}
+        .mission-title{font-size:1.8rem;font-weight:600;color:var(--title-color);position:relative;margin-bottom:30px;letter-spacing: 0.6px;font-family: 'Inter', Arial, sans-serif;}
+        .mission-title::after{content:'';position:absolute;left:0;bottom:-10px;width:80px;height:6px;background:var(--text-color);}
+        .mission-text{font-size:1.1rem;line-height:1.6;color:var(--text-color);font-weight:400;margin-bottom:20px;font-family: 'Inter', Arial, sans-serif;}
         .mission-image{flex:1;position:relative;overflow:hidden;border-radius:8px;}
         .carousel{position:relative;width:100%;}
         .carousel-slide{display:none;width:100%;position:relative;}
