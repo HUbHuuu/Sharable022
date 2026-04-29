@@ -39,7 +39,26 @@
         .back-btn{display:inline-block;margin-top:20px;padding:10px 25px;background:var(--brand-blue);color:#fff;border-radius:4px;font-weight:600;font-family: 'Inter', Arial, sans-serif;}
         footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;margin-top:60px;}
         .copyright{text-align:center;color:#ccc;}
-        @media (max-width:768px){.detail-wrap{grid-template-columns:1fr;}}
+        @media (max-width:768px){
+            .detail-wrap{grid-template-columns:1fr;}
+            .category-grid{grid-template-columns:repeat(2, 1fr) !important;}
+            .category-title{font-size:26px !important;}
+        }
+        @media (max-width:480px){
+            .category-grid{grid-template-columns:1fr !important;}
+        }
+        .categories-section{padding:80px 0;background:#fff;}
+        .category-title{font-size:32px;color:var(--title-color);margin-bottom:50px;font-weight:600;letter-spacing: 0.6px;text-align:center;}
+        .category-grid{display:grid;grid-template-columns:repeat(6, 1fr);gap:30px;}
+        .category-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08);transition:.3s;text-align:center;padding:20px;cursor:pointer;}
+        .category-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+        .category-card img{width:100%;height:180px;object-fit:contain;margin-bottom:15px;cursor:pointer;}
+        .category-card h3{font-size:16px;color:var(--title-color);font-weight:600;}
+        .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;justify-content:center;align-items:center;cursor:pointer;}
+        .lightbox.active{display:flex;}
+        .lightbox img{max-width:90%;max-height:90%;object-fit:contain;border-radius:8px;}
+        .lightbox-close{position:absolute;top:20px;right:30px;color:#fff;font-size:40px;cursor:pointer;font-weight:300;transition:.3s;}
+        .lightbox-close:hover{color:var(--brand-red);}
     </style>
 </head>
 <body>
@@ -76,12 +95,63 @@
                 <img src="https://picsum.photos/id/1050/800/600" alt="Switchgear">
             </div>
             <div class="detail-text">
-                <h2>High Voltage Switchgear</h2>
-                <p>CEEG high voltage switchgear has complete protection functions, anti-interference and stable operation.</p>
-                <p>Used for high voltage power distribution, substation and industrial power supply system.</p>
-                <p>Modular design, easy installation and maintenance.</p>
+                <h2>Metal-enclosed Switchgear</h2>
+                <p>We possess advanced sheet-metal and copper-busbar production lines, equipped with state-of-the-art devices such as laser cutting machines, bending machines, turret punches, welding robots, and integrated copper busbar punching, shearing, and bending machines. We specialize in OEM production of various power equipment for customers.</p>
+                <p style="margin-top: 15px;">Our product range extends from low-voltage GCK and GGD low-voltage power distribution boxes to medium-voltage primary center-mounted cabinets, ring-main units, and even ZGS-12/0.4 packaged substations (American style), as well as frequency conversion cabinets, explosion-proof control cabinets, shore power boxes, etc.</p>
+                <p style="margin-top: 15px;">Especially in the energy storage field, we have remarkable capabilities. We can provide OEM production of air-cooled energy storage systems, integrated energy storage units, step-up converter integrated units, liquid-cooled energy storage systems, etc.</p>
+                <p style="margin-top: 15px;">We not only offer complete design solutions but also have a reliable assembly and production management system and strictly implement comprehensive factory-out quality tests to ensure that every product is of high quality, providing you with all-around and high-quality solutions for your power needs!</p>
                 <a href="product1.html" class="back-btn">Prev Product</a>
                 <a href="product3.html" class="back-btn" style="background:#333;margin-left:10px;">Next Product</a>
+            </div>
+        </div>
+        <div class="detail-wrap">
+        </div>
+    </div>
+</section>
+
+<section class="categories-section">
+    <div class="container">
+        <h2 class="category-title">Switchgear Product Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="metal/Air-cooled Energy Storage System.png" alt="Air-cooled Energy Storage System">
+                <h3>Air-cooled Energy Storage System</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Energy  Storage  step up substation intergrated with Converter (Oil-immersed Transformer).png" alt="Energy Storage Step-up Substation integrated with Converter (Oil-immersed Transformer)">
+                <h3>Energy Storage Step-up Substation (Oil-immersed)</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Energy  Storage Step-up Substation integrated  with Converter (Dry Type Transformer).png" alt="Energy Storage Step-up Substation integrated with Converter (Dry Type Transformer)">
+                <h3>Energy Storage Step-up Substation (Dry Type)</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/GGD,  MNSZ,  GCK, and GCS series.png" alt="GGD, MNSZ, GCK, and GCS series">
+                <h3>GGD, MNSZ, GCK, and GCS series</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/IDC Intelligent integrated power module.png" alt="IDC Intelligent integrated power module">
+                <h3>IDC Intelligent Integrated Power Module</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Lighting Energy Metering Box.png" alt="Lighting Energy Metering Box">
+                <h3>Lighting Energy Metering Box</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Lighting Meter Enclosure.jpeg" alt="Lighting Meter Enclosure">
+                <h3>Lighting Meter Enclosure</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Metal-Clad Switchgear.jpeg" alt="Metal-Clad Switchgear">
+                <h3>Metal-Clad Switchgear</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Prefabricated  Containerized  Intelligent Substation.png" alt="Prefabricated Containerized Intelligent Substation">
+                <h3>Prefabricated Containerized Intelligent Substation</h3>
+            </div>
+            <div class="category-card">
+                <img src="metal/Step-up Converter Integrated Machine.png" alt="Step-up Converter Integrated Machine">
+                <h3>Step-up Converter Integrated Machine</h3>
             </div>
         </div>
     </div>
@@ -92,5 +162,39 @@
         <div class="copyright">© 2026 Sharable Technology. All Rights Reserved.</div>
     </div>
 </footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Enlarged View" id="lightbox-img">
+</div>
+
+<script>
+    function openLightbox(src) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    document.querySelectorAll('.category-card img').forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openLightbox(this.src);
+        });
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+</script>
 </body>
 </html>

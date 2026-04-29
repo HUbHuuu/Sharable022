@@ -39,7 +39,26 @@
         .back-btn{display:inline-block;margin-top:20px;padding:10px 25px;background:var(--brand-blue);color:#fff;border-radius:4px;font-weight:600;font-family: 'Inter', Arial, sans-serif;}
         footer{background:var(--brand-blue);color:#fff;padding:40px 0 20px;margin-top:60px;}
         .copyright{text-align:center;color:#ccc;}
-        @media (max-width:768px){.detail-wrap{grid-template-columns:1fr;}}
+        @media (max-width:768px){
+            .detail-wrap{grid-template-columns:1fr;}
+            .category-grid{grid-template-columns:repeat(2, 1fr) !important;}
+            .category-title{font-size:26px !important;}
+        }
+        @media (max-width:480px){
+            .category-grid{grid-template-columns:1fr !important;}
+        }
+        .categories-section{padding:80px 0;background:#fff;}
+        .category-title{font-size:32px;color:var(--title-color);margin-bottom:50px;font-weight:600;letter-spacing: 0.6px;text-align:center;}
+        .category-grid{display:grid;grid-template-columns:repeat(6, 1fr);gap:30px;}
+        .category-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08);transition:.3s;text-align:center;padding:20px;cursor:pointer;}
+        .category-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+        .category-card img{width:100%;height:180px;object-fit:contain;margin-bottom:15px;cursor:pointer;}
+        .category-card h3{font-size:16px;color:var(--title-color);font-weight:600;}
+        .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;justify-content:center;align-items:center;cursor:pointer;}
+        .lightbox.active{display:flex;}
+        .lightbox img{max-width:90%;max-height:90%;object-fit:contain;border-radius:8px;}
+        .lightbox-close{position:absolute;top:20px;right:30px;color:#fff;font-size:40px;cursor:pointer;font-weight:300;transition:.3s;}
+        .lightbox-close:hover{color:var(--brand-red);}
     </style>
 </head>
 <body>
@@ -73,15 +92,67 @@
     <div class="container">
         <div class="detail-wrap">
             <div class="detail-img">
-                <img src="https://picsum.photos/id/1053/800/600" alt="Parts Processing">
+                <img src="processing/icon.png" alt="Parts Processing">
             </div>
             <div class="detail-text">
                 <h2>Parts Processing Service</h2>
-                <p>CEEG provides professional parts processing services with advanced CNC equipment and experienced technicians.</p>
+                <p>Sharable provides professional parts processing services with advanced CNC equipment and experienced technicians.</p>
+                <br/>
                 <p>We offer custom machining, precision manufacturing, and quality inspection for electrical components and metal parts.</p>
+                <br/>
                 <p>Strict quality control ensures high precision and reliability for all processed parts.</p>
                 <a href="product3.html" class="back-btn">Prev Product</a>
                 <a href="index.html" class="back-btn" style="background:#333;margin-left:10px;">Back Home</a>
+            </div>
+        </div>
+        <div class="detail-wrap">
+        </div>
+    </div>
+</section>
+
+<section class="categories-section">
+    <div class="container">
+        <h2 class="category-title">Parts Processing Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="processing/Cast Aluminum Housing.png" alt="Cast Aluminum Housing">
+                <h3>Cast Aluminum Housing</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Copper Bar Fexible.png" alt="Copper Bar Flexible">
+                <h3>Copper Bar Flexible</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Copper Busbar.png" alt="Copper Busbar">
+                <h3>Copper Busbar</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Hot Forging&CNC.png" alt="Hot Forging & CNC">
+                <h3>Hot Forging & CNC</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Hydraulic Cylinder.png" alt="Hydraulic Cylinder">
+                <h3>Hydraulic Cylinder</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Metal Shielding Cover.jpg" alt="Metal Shielding Cover">
+                <h3>Metal Shielding Cover</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Semiconductor Bracket.png" alt="Semiconductor Bracket">
+                <h3>Semiconductor Bracket</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Stamped and Bent Parts.png" alt="Stamped and Bent Parts">
+                <h3>Stamped and Bent Parts</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Taper Fitting.png" alt="Taper Fitting">
+                <h3>Taper Fitting</h3>
+            </div>
+            <div class="category-card">
+                <img src="processing/Welded Housing .png" alt="Welded Housing">
+                <h3>Welded Housing</h3>
             </div>
         </div>
     </div>
@@ -92,5 +163,39 @@
         <div class="copyright">© 2026 Sharable Technology. All Rights Reserved.</div>
     </div>
 </footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Enlarged View" id="lightbox-img">
+</div>
+
+<script>
+    function openLightbox(src) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    document.querySelectorAll('.category-card img').forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openLightbox(this.src);
+        });
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+</script>
 </body>
 </html>
