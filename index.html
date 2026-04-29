@@ -102,15 +102,14 @@
         .mission-text{font-size:1.1rem;line-height:1.6;color:var(--text-color);font-weight:400;margin-bottom:20px;font-family: 'Inter', Arial, sans-serif;}
         .mission-image{flex:1;position:relative;overflow:hidden;border-radius:8px;}
         .carousel{position:relative;width:100%;}
-        .carousel-slide{display:none;width:100%;position:relative;}
+        .carousel-slide{display:none;width:100%;}
         .carousel-slide.active{display:block;}
-        .carousel-slide::before{content:'';display:block;padding-top:56.25%;}
-        .carousel-slide img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;}
-        .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:#fff;border:none;padding:10px 15px;cursor:pointer;font-size:18px;border-radius:4px;transition:.3s;}
+        .carousel-slide img{width:100%;height:auto;display:block;border-radius:8px;}
+        .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:#fff;border:none;padding:10px 15px;cursor:pointer;font-size:18px;border-radius:4px;transition:.3s;z-index:10;}
         .carousel-btn:hover{background:rgba(0,0,0,0.8);}
         .carousel-prev{left:10px;}
         .carousel-next{right:10px;}
-        .carousel-dots{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:8px;}
+        .carousel-dots{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
         .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;transition:.3s;}
         .carousel-dot.active{background:#fff;}
         .mission-image img{width:100%;height:auto;display:block;border-radius:8px;}
@@ -210,16 +209,16 @@
             <div class="mission-image">
                 <div class="carousel">
                     <div class="carousel-slide active">
-                        <img src="images/1.jpg" alt="Mission 1">
+                        <img src="images/1.png" alt="Mission 1">
                     </div>
                     <div class="carousel-slide">
-                        <img src="images/2.jpg" alt="Mission 2">
+                        <img src="images/2.png" alt="Mission 2">
                     </div>
                     <div class="carousel-slide">
-                        <img src="images/3.jpg" alt="Mission 3">
+                        <img src="images/3.png" alt="Mission 3">
                     </div>
                     <div class="carousel-slide">
-                        <img src="images/4.jpg" alt="Mission 4">
+                        <img src="images/4.png" alt="Mission 4">
                     </div>
                     <button class="carousel-btn carousel-prev" onclick="changeSlide(-1)">&#10094;</button>
                     <button class="carousel-btn carousel-next" onclick="changeSlide(1)">&#10095;</button>
@@ -285,54 +284,54 @@
 <script>
     let slideIndex = 0;
     let autoSlide;
-    
+
     function showSlide(n) {
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
-        
+
         if (n >= slides.length) slideIndex = 0;
         if (n < 0) slideIndex = slides.length - 1;
-        
+
         slides.forEach(slide => slide.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
-        
+
         slides[slideIndex].classList.add('active');
         dots[slideIndex].classList.add('active');
     }
-    
+
     function changeSlide(n) {
         slideIndex += n;
         showSlide(slideIndex);
         resetAutoSlide();
     }
-    
+
     function currentSlide(n) {
         slideIndex = n;
         showSlide(slideIndex);
         resetAutoSlide();
     }
-    
+
     function startAutoSlide() {
         autoSlide = setInterval(() => {
             slideIndex++;
             showSlide(slideIndex);
         }, 3000);
     }
-    
+
     function resetAutoSlide() {
         clearInterval(autoSlide);
         startAutoSlide();
     }
-    
+
     // 初始化自动轮播
     startAutoSlide();
-    
+
     // 手机端菜单切换
     function toggleMenu() {
         const navMenu = document.getElementById('navMenu');
         navMenu.classList.toggle('active');
     }
-    
+
     // 手机端下拉菜单切换
     function toggleDropdown(event) {
         if (window.innerWidth <= 768) {
@@ -343,7 +342,7 @@
             }
         }
     }
-    
+
     // 点击菜单项后关闭菜单（手机端）
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function() {
